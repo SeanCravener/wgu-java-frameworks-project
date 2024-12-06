@@ -6,12 +6,17 @@ B. Create a README file that includes notes describing where in the code to find
 
 C. Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts. Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
 
-    1. File: mainscreen.html - Line 14 - Changed "My Bicycle Shop" to "Sean's Skateboard Warehouse"
-    2. File: mainscreen.html - Line 19 - Changed "Shop" to "Sean's Skateboard Warehouse"
-    3. File: mainscreen.html - Line 21 - Changed "Parts" to "Skateboard Parts"
-    4. File: mainscreen.html - Line 53 - Changed "Products" to "Skateboards"
+    1. File: mainscreen.html - Line 14 - Changed "My Bicycle Shop" to "Sean's Skateboard Warehouse".
+    2. File: mainscreen.html - Line 19 - Changed "Shop" to "Sean's Skateboard Warehouse".
+    3. File: mainscreen.html - Line 21 - Changed "Parts" to "Skateboard Parts".
+    4. File: mainscreen.html - Line 53 - Changed "Products" to "Skateboards".
 
 D. Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+
+    1. File: about.html - Entire file - Added html to display About page with text describing Sean's Skateboard Warehouse. Including link in navigate back to the mainscreen.
+    2. File: AboutController.java - Entire file - Added contoller for about.html to enable navigation to the About page from the mainscreen.
+    3. File: mainscreen.html - Line 24 - Added a link to navigate to the About page.
+    4. File: mainscreen.html - Line 25 - Added an extra divider below the About page link.
 
 E. Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database. Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
