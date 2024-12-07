@@ -90,6 +90,17 @@ public class Product implements Serializable {
     public String toString(){
         return this.name;
     }
+
+    public boolean buyProduct() {
+        if (this.inv <= 0) {
+            return false;
+        }
+       
+        this.inv--;
+        
+        return true;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

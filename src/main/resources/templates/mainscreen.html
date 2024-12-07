@@ -127,6 +127,12 @@
             <td th:text="${tempProduct.inv}">1</td>
             <td>
               <a
+                th:href="@{/buyproduct(productID=${tempProduct.id})}"
+                class="btn btn-primary btn-sm mb-3"
+                onclick="if(!(confirm('Are you sure you want to buy this product?')))return false"
+                >Buy Now</a
+              >
+              <a
                 th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}"
                 class="btn btn-primary btn-sm mb-3"
                 >Update</a
