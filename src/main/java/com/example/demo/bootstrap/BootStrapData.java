@@ -55,6 +55,63 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println(thePart.getCompanyName());
         */
+
+        if (partRepository.count() == 0 && productRepository.count() == 0) {
+
+            Product StandardShortboard = new Product("Standard Shortboard", 49.95, 15);
+            Product SurfskateShortboard = new Product("Surfskate Shortboard", 59.95, 5);
+            Product OldSchoolShortboard = new Product("Old School Shortboard", 44.95, 10);
+            Product TwinTipLongboard = new Product("Twin Tip Longboard", 79.95, 8);
+            Product PintailLongboard = new Product("Pintail Longboard", 69.95, 8);
+
+            productRepository.save(StandardShortboard);
+            productRepository.save(SurfskateShortboard);
+            productRepository.save(OldSchoolShortboard);
+            productRepository.save(TwinTipLongboard);
+            productRepository.save(PintailLongboard);
+
+            OutsourcedPart Trucks = new OutsourcedPart();
+            Trucks.setCompanyName("Tensor");
+            Trucks.setName("Trucks");
+            Trucks.setInv(10);
+            Trucks.setPrice(38.99);
+            Trucks.setId(110L);
+
+            OutsourcedPart Wheels = new OutsourcedPart();
+            Wheels.setCompanyName("Ace");
+            Wheels.setName("Wheels");
+            Wheels.setInv(16);
+            Wheels.setPrice(25.99);
+            Wheels.setId(120L);
+
+            OutsourcedPart Bearings = new OutsourcedPart();
+            Bearings.setCompanyName("Venture");
+            Bearings.setName("Bearings");
+            Bearings.setInv(29);
+            Bearings.setPrice(27.99);
+            Bearings.setId(130L);
+
+            OutsourcedPart Griptape = new OutsourcedPart();
+            Griptape.setCompanyName("Krux");
+            Griptape.setName("Griptape");
+            Griptape.setInv(12);
+            Griptape.setPrice(11.99);
+            Griptape.setId(140);
+
+            OutsourcedPart Risers = new OutsourcedPart();
+            Risers.setCompanyName("Dook");
+            Risers.setName("Riser Pads");
+            Risers.setInv(24);
+            Risers.setPrice(3.49);
+            Risers.setId(150L);
+
+            outsourcedPartRepository.save(Trucks);
+            outsourcedPartRepository.save(Wheels);
+            outsourcedPartRepository.save(Bearings);
+            outsourcedPartRepository.save(Griptape);
+            outsourcedPartRepository.save(Risers);
+        }
+
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());

@@ -20,6 +20,10 @@ D. Add an “About” page to the application to describe your chosen customer�
 
 E. Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database. Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
+    1. File: BootStrapData.java - Line 59 to Line 113 - Added if statement block that only executes if there are no parts or products already in the database.
+    2. File: BootStrapData.java - Line 61 to Line 71 - Created five sample products and saved them to the product repository.
+    3. File: BootStrapData.java - Line 73 to Line 112 - Created five sample parts and saved them to the part repository.
+
 F. Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters: The “Buy Now” button must be next to the buttons that update and delete products.; The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.; Display a message that indicates the success or failure of a purchase.
 
 G. Modify the parts to track maximum and minimum inventory by doing the following:; -Add additional fields to the part entity for maximum and minimum inventory.; -Modify the sample inventory to include the maximum and minimum fields.; -Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.; -Rename the file the persistent storage is saved to.; -Modify the code to enforce that the inventory is between or at the minimum and maximum value.
