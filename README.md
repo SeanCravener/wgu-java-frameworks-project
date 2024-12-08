@@ -61,3 +61,5 @@ I. Add at least two unit tests for the maximum and minimum fields to the PartTes
     1. File: PartTest.java - Line 104 to Line 138 - Added tests for the minimum and maximum field getters and setters.
 
 J. Remove the class files for any unused validators in order to clean your code.
+
+    1. Removed DeletePartValidator.java and ValidDeletePart.java.
