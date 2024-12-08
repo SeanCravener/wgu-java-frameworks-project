@@ -48,6 +48,16 @@ G. Modify the parts to track maximum and minimum inventory by doing the followin
 
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:; -Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.; -Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.; -Display error messages when adding and updating parts if the inventory is greater than the maximum.
 
+    1. File: EnufPartsValidator.java - Line 36 - Added OR condition to existing if statement for checking if invetory drops below the set minimum inventory value.
+    2. File: MinimumInventoryValidator.java - Added File - Added validator for the set minimum inventory.
+    3. File: ValidMinimumInventory.java - Added File - Error message for minimum inventory validator.
+    4. File: MaximumInventoryValidator.java - Added File - Added validator for the set maximum inventory.
+    5. File: ValidMaximumInventory.java - Added File - Error message for maximum inventory validator.
+    6. File: Part.java - Line 4 to Line 5 - Imported validators for minimum and maximum inventory.
+    7. File: Part.java - Line 21 to Line 22 - Added reference to ValidMinimumInventory and ValidMaximumInventory validators.
+
 I. Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
+    1. File: PartTest.java - Line 104 to Line 138 - Added tests for the minimum and maximum field getters and setters.
 
 J. Remove the class files for any unused validators in order to clean your code.
