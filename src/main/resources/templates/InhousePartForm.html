@@ -48,6 +48,9 @@
             class="form-control mb-4 col-4"
           />
         </p>
+        <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">
+          Minimum Inventory Error
+        </p>
 
         <p>
           <input
@@ -56,6 +59,9 @@
             placeholder="Maximum Inventory"
             class="form-control mb-4 col-4"
           />
+        </p>
+        <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">
+          Maximum Inventory Error
         </p>
 
         <p>

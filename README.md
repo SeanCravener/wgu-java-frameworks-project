@@ -40,8 +40,8 @@ G. Modify the parts to track maximum and minimum inventory by doing the followin
     4. File: Part.java - Line 92 to Line 107 - Added getters and setters for newly added fields, minInv and maxInv.
     5. File: Part.java - Line 120 to Line 126 - Added method to enfore that the inventory is at the minimum or maximum values.
     6. File: BootStrapData.java - Line 108 to Line 117 - Modified the sample parts invetory to include minimum and maximum inventory values.
-    7. File: InhousePartForm.html - Line 45 to Line 59 - Added fields for setting minimum and maximum inventory values.
-    8. File: OutsourcedPartForm.html - Line 43 - Line 59 - Added fields for setting minimum and maximum inventory values.
+    7. File: InhousePartForm.html - Line 43 to Line 65 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
+    8. File: OutsourcedPartForm.html - Line 43 to Line 65 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
     9. File: application.properties - Line 5 - Renamed file for the persistant storage from "spring-boot-h2-db102" to "skateboard-warehouse-inventory".
     10. File: OutsourcedPartServiceImpl.java - Line 52 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
     11. File: InhousePartServiceImpl.java - Line 54 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
@@ -63,3 +63,4 @@ I. Add at least two unit tests for the maximum and minimum fields to the PartTes
 J. Remove the class files for any unused validators in order to clean your code.
 
     1. Removed DeletePartValidator.java and ValidDeletePart.java.
+    2. Removed imported delete part validator from Part.java.
