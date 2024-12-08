@@ -105,6 +105,17 @@ public class BootStrapData implements CommandLineRunner {
             Risers.setPrice(3.49);
             Risers.setId(150L);
 
+            Trucks.setMinInv(2);
+            Trucks.setMaxInv(100);
+            Wheels.setMinInv(4);
+            Wheels.setMaxInv(100);
+            Bearings.setMinInv(4);
+            Bearings.setMaxInv(100);
+            Griptape.setMinInv(1);
+            Griptape.setMaxInv(100);
+            Risers.setMinInv(2);
+            Risers.setMaxInv(100);
+
             outsourcedPartRepository.save(Trucks);
             outsourcedPartRepository.save(Wheels);
             outsourcedPartRepository.save(Bearings);

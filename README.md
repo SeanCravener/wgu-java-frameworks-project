@@ -34,6 +34,18 @@ F. Add a “Buy Now” button to your product list. Your “Buy Now” button mu
 
 G. Modify the parts to track maximum and minimum inventory by doing the following:; -Add additional fields to the part entity for maximum and minimum inventory.; -Modify the sample inventory to include the maximum and minimum fields.; -Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.; -Rename the file the persistent storage is saved to.; -Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 
+    1. File: Part.java - Line 31 to Line 33 - Added additional fields for minimum and maximum inventory values.
+    2. File: Part.java - Line 47 to Line 48 - Added default minimum and maximum inventory values to constructor.
+    3. File: Part.java - Line 56 to Line 57 - Added default minimum and maximum inventory values to constructor.
+    4. File: Part.java - Line 92 to Line 107 - Added getters and setters for newly added fields, minInv and maxInv.
+    5. File: Part.java - Line 120 to Line 126 - Added method to enfore that the inventory is at the minimum or maximum values.
+    6. File: BootStrapData.java - Line 108 to Line 117 - Modified the sample parts invetory to include minimum and maximum inventory values.
+    7. File: InhousePartForm.html - Line 45 to Line 59 - Added fields for setting minimum and maximum inventory values.
+    8. File: OutsourcedPartForm.html - Line 43 - Line 59 - Added fields for setting minimum and maximum inventory values.
+    9. File: application.properties - Line 5 - Renamed file for the persistant storage from "spring-boot-h2-db102" to "skateboard-warehouse-inventory".
+    10. File: OutsourcedPartServiceImpl.java - Line 52 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
+    11. File: InhousePartServiceImpl.java - Line 54 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
+
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:; -Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.; -Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.; -Display error messages when adding and updating parts if the inventory is greater than the maximum.
 
 I. Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
