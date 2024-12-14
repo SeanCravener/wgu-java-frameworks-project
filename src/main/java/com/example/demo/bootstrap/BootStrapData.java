@@ -1,20 +1,16 @@
 package com.example.demo.bootstrap;
 
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
-import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
-import com.example.demo.service.OutsourcedPartService;
-import com.example.demo.service.OutsourcedPartServiceImpl;
-import com.example.demo.service.ProductService;
-import com.example.demo.service.ProductServiceImpl;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 /**
  *
@@ -56,7 +52,7 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println(thePart.getCompanyName());
         */
 
-        if (partRepository.count() == 0 && productRepository.count() == 0) {
+        if (productRepository.count() == 0) {
 
             Product StandardShortboard = new Product("Standard Shortboard", 49.95, 15);
             Product SurfskateShortboard = new Product("Surfskate Shortboard", 59.95, 5);
@@ -69,7 +65,58 @@ public class BootStrapData implements CommandLineRunner {
             productRepository.save(OldSchoolShortboard);
             productRepository.save(TwinTipLongboard);
             productRepository.save(PintailLongboard);
+        }
 
+        if (partRepository.count() == 0) {
+            InhousePart Bushings = new InhousePart();
+            Bushings.setName("Bushings");
+            Bushings.setInv(25);
+            Bushings.setPrice(4.99);
+            Bushings.setId(210L);
+
+            InhousePart DeckRails = new InhousePart();
+            DeckRails.setName("Deck Rails");
+            DeckRails.setInv(20);
+            DeckRails.setPrice(11.99);
+            DeckRails.setId(220L);
+
+            InhousePart TailBone = new InhousePart();
+            TailBone.setName("Tail Bone");
+            TailBone.setInv(30);
+            TailBone.setPrice(10.99);
+            TailBone.setId(230L);
+
+            InhousePart AxleNuts = new InhousePart();
+            AxleNuts.setName("Axle Nuts");
+            AxleNuts.setInv(52);
+            AxleNuts.setPrice(1.99);
+            AxleNuts.setId(240L);
+
+            InhousePart Baseplate = new InhousePart();
+            Baseplate.setName("Baseplate");
+            Baseplate.setInv(11);
+            Baseplate.setPrice(29.00);
+            Baseplate.setId(250L);
+
+            Bushings.setMinInv(2);
+            Bushings.setMaxInv(100);
+            DeckRails.setMinInv(4);
+            DeckRails.setMaxInv(100);
+            TailBone.setMinInv(4);
+            TailBone.setMaxInv(100);
+            AxleNuts.setMinInv(1);
+            AxleNuts.setMaxInv(100);
+            Baseplate.setMinInv(2);
+            Baseplate.setMaxInv(100);
+
+            partRepository.save(Bushings);
+            partRepository.save(DeckRails);
+            partRepository.save(TailBone);
+            partRepository.save(AxleNuts);
+            partRepository.save(Baseplate);
+        }
+
+        if (outsourcedPartRepository.count() == 0) {
             OutsourcedPart Trucks = new OutsourcedPart();
             Trucks.setCompanyName("Tensor");
             Trucks.setName("Trucks");
@@ -96,7 +143,7 @@ public class BootStrapData implements CommandLineRunner {
             Griptape.setName("Griptape");
             Griptape.setInv(12);
             Griptape.setPrice(11.99);
-            Griptape.setId(140);
+            Griptape.setId(140L);
 
             OutsourcedPart Risers = new OutsourcedPart();
             Risers.setCompanyName("Dook");

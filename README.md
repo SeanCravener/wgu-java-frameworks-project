@@ -20,9 +20,9 @@ D. Add an “About” page to the application to describe your chosen customer�
 
 E. Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database. Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
-    1. File: BootStrapData.java - Line 59 to Line 113 - Added if statement block that only executes if there are no parts or products already in the database.
-    2. File: BootStrapData.java - Line 61 to Line 71 - Created five sample products and saved them to the product repository.
-    3. File: BootStrapData.java - Line 73 to Line 112 - Created five sample parts and saved them to the part repository.
+    1. File: BootStrapData.java - Line 55 to Line 68 - Added if statement block that only executes if there are no products already in the database and adds sample products.
+    2. File: BootStrapData.java - Line 70 to Line 117 - Added if statement block that only executes if there are no parts already in the database and adds sample inhouse parts.
+    3. File: BootStrapData.java - Line 119 to Line 171 - Added if statement block that only executes if there are no outsourced parts already in the database and adds sample outsourced parts.
 
 F. Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters: The “Buy Now” button must be next to the buttons that update and delete products.; The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.; Display a message that indicates the success or failure of a purchase.
 
@@ -39,12 +39,13 @@ G. Modify the parts to track maximum and minimum inventory by doing the followin
     3. File: Part.java - Line 56 to Line 57 - Added default minimum and maximum inventory values to constructor.
     4. File: Part.java - Line 92 to Line 107 - Added getters and setters for newly added fields, minInv and maxInv.
     5. File: Part.java - Line 120 to Line 126 - Added method to enfore that the inventory is at the minimum or maximum values.
-    6. File: BootStrapData.java - Line 108 to Line 117 - Modified the sample parts invetory to include minimum and maximum inventory values.
-    7. File: InhousePartForm.html - Line 43 to Line 65 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
-    8. File: OutsourcedPartForm.html - Line 43 to Line 65 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
+    6. File: BootStrapData.java - Line 101 to Line 110 and Line 155 to Line 164 - Modified the sample parts invetory to include minimum and maximum inventory values.
+    7. File: InhousePartForm.html - Line 48 to Line 67 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
+    8. File: OutsourcedPartForm.html - Line 46 to Line 66 - Added fields for setting minimum and maximum inventory values. Also set up to display error message.
     9. File: application.properties - Line 5 - Renamed file for the persistant storage from "spring-boot-h2-db102" to "skateboard-warehouse-inventory".
     10. File: OutsourcedPartServiceImpl.java - Line 52 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
     11. File: InhousePartServiceImpl.java - Line 54 - Added call to enforceValidInventory() to enfore that the inventory is set at either the minimum or maximum invetory values.
+    12. File: mainscreen.html - Line 60 to Line 61 and Line 70 to Line 71 - Added extra columns to display a part's minimum and maximum inventory.
 
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:; -Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.; -Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.; -Display error messages when adding and updating parts if the inventory is greater than the maximum.
 
@@ -64,3 +65,7 @@ J. Remove the class files for any unused validators in order to clean your code.
 
     1. Removed DeletePartValidator.java and ValidDeletePart.java.
     2. Removed imported delete part validator from Part.java.
+
+EXTRA EDITS:
+
+    1. OutsourcedPartForm.html and InhousePartForm.html - Added Label and associated id for each input field in order to make the fields more easily identifiable.

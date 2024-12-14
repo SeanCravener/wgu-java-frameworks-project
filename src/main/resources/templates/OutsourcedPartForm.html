@@ -14,26 +14,29 @@
         th:action="@{/showFormAddOutPart}"
         th:object="${outsourcedpart}"
         method="POST"
-        }
       >
         <!-- Add hidden form field to handle update -->
         <p><input type="hidden" th:field="*{id}" /></p>
 
         <p>
+          <label for="name">Part Name: </label>
           <input
             type="text"
             th:field="*{name}"
             placeholder="Name"
             class="form-control mb-4 col-4"
+            id="name"
           />
         </p>
 
         <p>
+          <label for="price">Price: </label>
           <input
             type="text"
             th:field="*{price}"
             placeholder="Price"
             class="form-control mb-4 col-4"
+            id="price"
           />
         </p>
         <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">
@@ -41,35 +44,35 @@
         </p>
 
         <p>
+          <label for="minInv">Minimum Inventory: </label>
           <input
             type="text"
             th:field="*{minInv}"
             placeholder="Minimum"
             class="form-control mb-4 col-4"
+            id="minInv"
           />
-        </p>
-        <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">
-          Minimum Inventory Error
         </p>
 
         <p>
+          <label for="maxInv">Maximum Inventory: </label>
           <input
             type="text"
             th:field="*{maxInv}"
             placeholder="Maximum"
             class="form-control mb-4 col-4"
+            id="maxInv"
           />
-        </p>
-        <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">
-          Maximum Inventory Error
         </p>
 
         <p>
+          <label for="inv">Inventory: </label>
           <input
             type="text"
             th:field="*{inv}"
             placeholder="Inventory"
             class="form-control mb-4 col-4"
+            id="inv"
           />
         </p>
         <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">
@@ -77,13 +80,21 @@
         </p>
 
         <p>
+          <label for="companyName">Company Name: </label>
           <input
             type="text"
             th:field="*{companyName}"
             placeholder="Company Name"
             class="form-control mb-4 col-4"
+            id="companyName"
           />
         </p>
+
+        <p>
+          <div th:if="${#fields.hasAnyErrors()}">
+              <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
+          </div>
+          </p>
 
         <p><input type="submit" value="Submit" /></p>
       </form>
