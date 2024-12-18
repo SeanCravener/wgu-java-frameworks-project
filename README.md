@@ -69,3 +69,6 @@ J. Remove the class files for any unused validators in order to clean your code.
 EXTRA EDITS:
 
     1. OutsourcedPartForm.html and InhousePartForm.html - Added Label and associated id for each input field in order to make the fields more easily identifiable.
+    2. AddProductController.java - Line 142 to Line 144 - Added if statement to check if the part trying to be associated has less inventory than the product's inventory. If it does it sends the user to the addparterror.html page.
+    3. addparterror.html - Whole File - Added html file to display error when associated parts with not enough inventory.
+    4. EnufPartsValidator.java - Line 36 to Line 42 - Fixed if statement check.

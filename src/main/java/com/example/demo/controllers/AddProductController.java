@@ -139,6 +139,9 @@ public class AddProductController {
         if (product1.getName()==null) {
             return "saveproductscreen";
         }
+        else if(product1.getInv() > partService.findById(theID).getInv()){
+            return "addparterror";
+        }
         else{
         product1.getParts().add(partService.findById(theID));
         partService.findById(theID).getProducts().add(product1);
