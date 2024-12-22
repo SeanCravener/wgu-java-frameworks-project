@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMinimumInventory {
-    String message() default "Inventory cannot go below set maximum inventory value";
+    String message() default "Inventory cannot go below set minimum inventory value";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 }
